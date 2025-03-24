@@ -9,10 +9,19 @@
           "manifest": "./src/extensions/loadIfcCommandSet/LoadIfcCommandSetCommandSet.manifest.json"
         }
       ]
+    },
+    "load-ifc-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/loadIfc/LoadIfcCommandSet.js",
+          "manifest": "./src/extensions/loadIfc/LoadIfcCommandSet.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "LoadIfcCommandSetCommandSetStrings": "lib/extensions/loadIfcCommandSet/loc/{locale}.js"
+    "LoadIfcCommandSetCommandSetStrings": "lib/extensions/loadIfcCommandSet/loc/{locale}.js",
+    "LoadIfcCommandSetStrings": "lib/extensions/loadIfc/loc/{locale}.js"
   }
 }

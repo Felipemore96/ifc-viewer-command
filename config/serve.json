@@ -26,6 +26,18 @@
           }
         }
       }
+    },
+    "loadIfc": {
+      "pageUrl": "https://{tenantDomain}/SitePages/myPage.aspx",
+      "customActions": {
+        "34fe8028-de6b-4013-bd0a-68ed39f8bc37": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
     }
   }
 }
