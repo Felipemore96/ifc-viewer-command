@@ -2,14 +2,6 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "load-ifc-command-set-command-set": {
-      "components": [
-        {
-          "entrypoint": "./lib/extensions/loadIfcCommandSet/LoadIfcCommandSetCommandSet.js",
-          "manifest": "./src/extensions/loadIfcCommandSet/LoadIfcCommandSetCommandSet.manifest.json"
-        }
-      ]
-    },
     "load-ifc-command-set": {
       "components": [
         {
