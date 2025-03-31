@@ -74,20 +74,49 @@ export default class LoadIfcCommandSet extends BaseListViewCommandSet<ILoadIfcCo
         }));
 
       if (selectedFiles.length > 0) {
-        // Open the viewer page with the first selected IFC file
+        // Show floating notification
+        this._showLoadingNotification(selectedFiles[0].name);
+
+        // Update URL for the viewer to use
         const viewerUrl = new URL(this.properties.viewerPageUrl);
         viewerUrl.searchParams.append(
           "fileUrl",
           encodeURIComponent(selectedFiles[0].url)
         );
 
-        // Open in same tab or new tab based on your preference
-        window.open(viewerUrl.toString(), "_blank");
+        // Change the current URL (without navigating)
+        window.history.pushState({}, "", viewerUrl.toString());
+
+        // Optional: Open in new tab after a delay
+        setTimeout(() => {
+          window.open(viewerUrl.toString(), "_blank");
+        }, 1500);
       } else {
         Dialog.alert("No IFC files selected").catch(() => {
           /* handle error */
         });
       }
     }
+  }
+
+  private _showLoadingNotification(fileName: string): void {
+    const notification = document.createElement("div");
+    notification.style.position = "fixed";
+    notification.style.bottom = "20px";
+    notification.style.right = "20px";
+    notification.style.padding = "15px";
+    notification.style.backgroundColor = "#0078d4";
+    notification.style.color = "white";
+    notification.style.borderRadius = "4px";
+    notification.style.boxShadow = "0 2px 4px rgba(0,0,0,0.2)";
+    notification.style.zIndex = "1000";
+    notification.innerHTML = `Preparing to load <strong>${fileName}</strong> in IFC Viewer...`;
+
+    document.body.appendChild(notification);
+
+    // Auto-remove after 3 seconds
+    setTimeout(() => {
+      document.body.removeChild(notification);
+    }, 3000);
   }
 }
