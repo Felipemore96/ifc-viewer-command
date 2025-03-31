@@ -4,24 +4,12 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://buccbv.sharepoint.com/sites/BIMPilotSite/Shared%20Documents/Forms/AllItems.aspx",
+      "pageUrl": "https://buccbv.sharepoint.com/sites/BIMPilotSite/SitePages/Documents-&-IFC-Viewer.aspx",
       "customActions": {
         "26fb0d7b-5433-4317-b9be-38d6e3d83206": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
           "properties": {
             "viewerPageUrl": "https://buccbv.sharepoint.com/sites/BIMPilotSite/SitePages/Documents-&-IFC-Viewer.aspx"
-          }
-        }
-      }
-    },
-    "loadIfc": {
-      "pageUrl": "https://buccbv.sharepoint.com/sites/BIMPilotSite/Shared%20Documents/Forms/AllItems.aspx",
-      "customActions": {
-        "26fb0d7b-5433-4317-b9be-38d6e3d83206": {
-          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
-          "properties": {
-            "sampleTextOne": "One item is selected in the list",
-            "sampleTextTwo": "This command is always visible."
           }
         }
       }

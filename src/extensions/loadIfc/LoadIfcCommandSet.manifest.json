@@ -10,7 +10,7 @@
   "items": {
     "LOAD_IFC": {
       "title": { "default": "Load to IFC Viewer" },
-      "iconImageUrl": "icons/ifc-icon.png",
+      "iconImageUrl": "icons/ifc.png",
       "type": "command"
     }
   }
