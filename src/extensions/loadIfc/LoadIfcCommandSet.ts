@@ -15,6 +15,9 @@ const LOG_SOURCE: string = "LoadIfcCommandSet";
 
 export default class LoadIfcCommandSet extends BaseListViewCommandSet<ILoadIfcCommandSetProperties> {
   public onInit(): Promise<void> {
+    console.log("🟢 Extension INITIALIZED");
+    console.log("Context:", this.context);
+    console.log("Available commands:", this.tryGetCommand("LOAD_IFC"));
     Log.info(LOG_SOURCE, "Initialized LoadIfcCommandSet");
 
     // Set initial state of the command's visibility
@@ -23,7 +26,6 @@ export default class LoadIfcCommandSet extends BaseListViewCommandSet<ILoadIfcCo
       loadIfcCommand.visible = false;
     }
 
-    // Add handler for list view state changes
     this.context.listView.listViewStateChangedEvent.add(
       this,
       this._onListViewStateChanged
@@ -47,14 +49,27 @@ export default class LoadIfcCommandSet extends BaseListViewCommandSet<ILoadIfcCo
   ): void => {
     Log.info(LOG_SOURCE, "List view state changed");
 
-    const loadIfcCommand: Command = this.tryGetCommand("LOAD_IFC");
-    if (loadIfcCommand) {
-      // Show button only when IFC files are selected
-      const hasIfcFilesSelected = this.context.listView.selectedRows?.some(
-        (row) =>
-          row.getValueByName("FileLeafRef").toLowerCase().endsWith(".ifc")
+    console.log("🔵 ListView state changed");
+    console.log("Selected rows:", this.context.listView.selectedRows);
+
+    const command: Command = this.tryGetCommand("LOAD_IFC");
+    console.log("Command object:", command);
+
+    if (command) {
+      const selectedFiles = this.context.listView.selectedRows || [];
+      console.log(
+        "All selected files:",
+        selectedFiles.map((r) => r.getValueByName("FileLeafRef"))
       );
-      loadIfcCommand.visible = hasIfcFilesSelected ?? false;
+
+      const hasIfcFiles = selectedFiles.some((row) => {
+        const name = row.getValueByName("FileLeafRef") || "";
+        console.log("Checking file:", name);
+        return name.toLowerCase().endsWith(".ifc");
+      });
+
+      console.log("Has IFC files:", hasIfcFiles);
+      command.visible = hasIfcFiles;
     }
 
     this.raiseOnChange();
