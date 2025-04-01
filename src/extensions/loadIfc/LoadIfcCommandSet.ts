@@ -34,6 +34,8 @@ export default class LoadIfcCommandSet extends BaseListViewCommandSet<ILoadIfcCo
     return Promise.resolve();
   }
 
+  //code that will happen when the command is executed or the item is selected from the menu.
+  // This method contains the logic of what you want to do on the command button click.
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
     switch (event.itemId) {
       case "LOAD_IFC":
@@ -44,6 +46,11 @@ export default class LoadIfcCommandSet extends BaseListViewCommandSet<ILoadIfcCo
     }
   }
 
+  //Whenever a change happens to the SharePoint Online list view,  this event triggers separately
+  // for each command and the UI  re-rendered. The event function parameter will have the
+  // information about which command being rendered. Based on that you can implement your logic
+  // like you can show a button whenever a certain number of items are selected in the list view.
+  // You can use the tryGetCommand to get the command button and implement the logic.
   private _onListViewStateChanged = (
     args: ListViewStateChangedEventArgs
   ): void => {
