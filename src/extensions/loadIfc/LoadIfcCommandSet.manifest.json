@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
-  "id": "26fb0d7b-5433-4317-b9be-38d6e3d83206",
+  "id": "7ab83040-0ce3-4929-ab64-9c5aa79392a5",
   "alias": "LoadIfcCommandSet",
   "componentType": "Extension",
   "extensionType": "ListViewCommandSet",

@@ -6,7 +6,7 @@
     "default": {
       "pageUrl": "https://buccbv.sharepoint.com/sites/BIMPilotSite/Shared%20Documents/Forms/AllItems.aspx",
       "customActions": {
-        "26fb0d7b-5433-4317-b9be-38d6e3d83206": {
+        "7ab83040-0ce3-4929-ab64-9c5aa79392a5": {
           "location": "ClientSideExtension.ListViewCommandSet",
           "properties": {
             "sampleTextOne": "One item is selected in the list",
@@ -18,7 +18,7 @@
     "test": {
       "pageUrl": "https://buccbv.sharepoint.com/sites/BIMPilotSite/Shared%20Documents/Forms/AllItems.aspx",
       "customActions": {
-        "26fb0d7b-5433-4317-b9be-38d6e3d83206": {
+        "7ab83040-0ce3-4929-ab64-9c5aa79392a5": {
           "location": "ClientSideExtension.ListViewCommandSet",
           "properties": {
             "sampleTextOne": "One item is selected in the list",

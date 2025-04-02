@@ -4,8 +4,8 @@
         Title="Load to IFC Viewer"
         RegistrationId="101"
         RegistrationType="List"
-        Location="ClientSideExtension.ListViewCommandSet"
-        ClientSideComponentId="26fb0d7b-5433-4317-b9be-38d6e3d83206"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ClientSideComponentId="7ab83040-0ce3-4929-ab64-9c5aa79392a5"
         ClientSideComponentProperties="{&quot;sampleTextOne&quot;:&quot;One item is selected in the list.&quot;, &quot;sampleTextTwo&quot;:&quot;This command is always visible.&quot;}">
     </CustomAction>
     <CustomAction
@@ -14,7 +14,7 @@
         RegistrationType="List"
         ListTemplateId="101"
         Location="ClientSideExtension.ListViewCommandSet.CommandBar"
-        ClientSideComponentId="26fb0d7b-5433-4317-b9be-38d6e3d83206"
+        ClientSideComponentId="7ab83040-0ce3-4929-ab64-9c5aa79392a5"
         ClientSideComponentProperties="{&quot;sampleTextOne&quot;:&quot;One item is selected in the list.&quot;, &quot;sampleTextTwo&quot;:&quot;This command is always visible.&quot;}">
     </CustomAction>
 </Elements>
